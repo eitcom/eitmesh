@@ -1,4 +1,4 @@
-# Mesh Models
+# Mesh Models From The FMMU EIT Group
 
   - [x] `DLS2.mes` human head annotated mesh
   - [x] `I0007.mes` small scaled down human head mesh
@@ -10,7 +10,7 @@ mstr = pkg_resources.resource_filename('pyeit-models', 'model/I0007.mes')
 ```
 where `mstr` is the path to the mesh model.
 
-The mesh structure was developed by the **FMMU EIT group** (Bin Yang, et al.)
+The mesh structure was developed by the **FMMU EIT group** (XiuZhen Dong, et al.)
 Please Cite the following paper if you are using .mes in your research:
 
 ```

@@ -29,7 +29,18 @@ Some thoughts on FEM simulation
   
   - [ceviche](https://github.com/fancompute/ceviche) Electromagnetic Simulation and Automatic Differentiation
 
-## 2. Dependences
+## 2. FMMU Meshes
+
+Reproducible mesh files from the **FMMU-EIT** group.
+
+`data/DLS2.mes`: Human head annotated mesh (for used in Damped Least Squares, DLS).
+
+![DLS2.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/DLS2.png)
+
+`data/I0007.mes`: Small scaled down human head mesh.
+
+![I0007.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/I0007.png)
+
 
 ## 3. Applications
 

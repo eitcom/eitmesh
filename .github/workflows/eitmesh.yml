@@ -21,8 +21,22 @@ jobs:
       run: |
         $CONDA/bin/conda install flake8
         $CONDA/bin/flake8 .
-    - name: Lint with black
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10']
+    steps:
+    - uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - uses: actions/checkout@v2
+    - name: Install dependencies
       run: |
-        $CONDA/bin/conda install black
-        $CONDA/bin/black --check .
+        # $CONDA is an environment variable pointing to the root of the miniconda directory
+        $CONDA/bin/conda env update --file environment.yml --name base
+    - name: Build and install
+      run: |
+        $CONDA/bin/python setup.py install
 

@@ -8,5 +8,5 @@ dependencies:
   - numpy
   - scipy
   - pandas
-  - matplotlib
-  - vispy
+  - matplotlib-base
+  - pyeit

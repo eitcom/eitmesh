@@ -6,7 +6,7 @@
 
 ```python
 import pkg_resources
-mstr = pkg_resources.resource_filename('pyeit-models', 'model/I0007.mes')
+mstr = pkg_resources.resource_filename('eitmesh', 'data/I0007.mes')
 ```
 where `mstr` is the path to the mesh model.
 

@@ -1,4 +1,4 @@
-# pyeit-models
+# eitmesh
 
 *status: experimental*
 

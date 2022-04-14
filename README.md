@@ -31,6 +31,8 @@ Some thoughts on FEM simulation
 
 ## 2. FMMU Meshes
 
+![mesh_plot.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/mesh_plot.png)
+
 Reproducible mesh files from the **FMMU-EIT** group.
 
 `data/DLS2.mes`: Human head annotated mesh (for used in Damped Least Squares, DLS).
@@ -40,6 +42,10 @@ Reproducible mesh files from the **FMMU-EIT** group.
 `data/I0007.mes`: Small scaled down human head mesh.
 
 ![I0007.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/I0007.png)
+
+`data/IM470.mes`: Yang Bin Regenerated assymetric mesh.
+
+![IM470.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/IM470.png)
 
 
 ## 3. Applications

@@ -43,7 +43,7 @@ Reproducible mesh files from the **FMMU-EIT** group.
 
 ![I0007.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/I0007.png)
 
-`data/IM470.mes`: Yang Bin Regenerated assymetric mesh.
+`data/IM470.mes`: Regenerated assymetric mesh (Yang Bin).
 
 ![IM470.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/IM470.png)
 

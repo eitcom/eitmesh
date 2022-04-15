@@ -47,6 +47,10 @@ Reproducible mesh files from the **FMMU-EIT** group.
 
 ![IM470.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/IM470.png)
 
+`data/hsymm.mat`: Symmetric (almost) head mesh (Benyuan Liu).
+
+![hsymm22.png](https://raw.githubusercontent.com/liubenyuan/eitmesh/master/doc/images/hsymm22.png)
+
 
 ## 3. Applications
 

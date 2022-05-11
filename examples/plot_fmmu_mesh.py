@@ -3,27 +3,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pyeit.io import mes
 
-# load mesh
+# load mesh (PyEITMesh dataset)
 file_name = "I0007"
 mesh_file = resource_filename("eitmesh", "data/{}.mes".format(file_name))
-mesh, el_pos = mes.load(mesh_file)
-pts = mesh["node"]
-x, y = pts[:, 0], pts[:, 1]
-tri = mesh["element"]
+mesh = mes.load(mesh_file)
+x, y = mesh.node[:, 0], mesh.node[:, 1]
 # load mesh background image
 mesh_img = mesh_file.replace(".mes", ".bmp")
 mesh_bk = plt.imread(mesh_img)
-xy_center = np.array([np.mean(x[el_pos[[4, 13]]]), np.mean(y[el_pos[[0, 8]]])])
+print(mesh.elem_centers.shape)
+xy_center = np.array(
+    [np.mean(x[mesh.el_pos[[4, 13]]]), np.mean(y[mesh.el_pos[[0, 8]]])]
+)
 
 fig, ax = plt.subplots()
 mesh_im = ax.imshow(mesh_bk, origin="upper")
-ax.triplot(x, y, tri, lw=1.0)
-for i, e in enumerate(el_pos):
+ax.triplot(x, y, mesh.element, lw=1.0)
+for i, e in enumerate(mesh.el_pos):
     ax.plot(x[e], y[e], "ro")
     ele_cord = np.array([x[e], y[e]])
     text_offset = (ele_cord - xy_center) * 0.06 * [1, -1]
     ax.annotate(
-        str(i),
+        str(i + 1),
         xy=ele_cord,
         xytext=text_offset,
         textcoords="offset points",

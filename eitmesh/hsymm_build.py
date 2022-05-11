@@ -4,11 +4,9 @@ import matplotlib.pyplot as plt
 from scipy.io import loadmat, savemat
 
 from pyeit.io.mes import mesh_plot
-from pyeit.mesh import shape
-from pyeit.mesh import distmesh
+from pyeit.mesh import PyEITMesh, shape, distmesh
 import pyeit.mesh.utils as utils
 
-save_mesh = False
 el_pos = np.arange(16)
 # build triangles
 p, t = distmesh.build(
@@ -26,18 +24,24 @@ perm = np.ones(t.shape[0])
 perm[cd_min < 0.1] = 0.8
 
 # %% plot
-mesh_obj = {"node": p, "element": t, "perm": perm}
+mesh_dataset = PyEITMesh(node=p, element=t, perm=perm, el_pos=el_pos, ref_node=0)
 fig, ax = plt.subplots(figsize=(9, 6))
-mesh_plot(ax, mesh_obj, el_pos)
+mesh_plot(ax, mesh_dataset)
 
+save_mesh = False
 if save_mesh:
     # save figure
-    fig.savefig("../doc/images/hsymm22.png", dpi=100)
+    # fig.savefig("../doc/images/hsymm22.png", dpi=100)
 
     # save mesh
-    mesh = {"mesh_obj": mesh_obj, "el_pos": el_pos}
-    savemat("./data/hsymm22.mat", mesh)
+    savemat("./data/hsymm22.mat", {"mesh_dataset": mesh_dataset})
 
     # load and verify mesh
-    mat = loadmat("hsymm22.mat", simplify_cells=True)
-    mesh_obj, el_pos = mat["mesh_obj"], mat["el_pos"]
+    mat = loadmat("./data/hsymm22.mat", simplify_cells=True)["mesh_dataset"]
+    mesh_obj = PyEITMesh(
+        node=mat["node"],
+        element=mat["element"],
+        perm=mat["perm"],
+        el_pos=mat["el_pos"],
+        ref_node=mat["ref_node"],
+    )

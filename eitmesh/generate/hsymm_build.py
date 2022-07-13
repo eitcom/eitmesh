@@ -34,10 +34,10 @@ if save_mesh:
     # fig.savefig("../doc/images/hsymm22.png", dpi=100)
 
     # save mesh
-    savemat("./data/hsymm22.mat", {"mesh_dataset": mesh_dataset})
+    savemat("../data/hsymm22.mat", {"mesh_dataset": mesh_dataset})
 
     # load and verify mesh
-    mat = loadmat("./data/hsymm22.mat", simplify_cells=True)["mesh_dataset"]
+    mat = loadmat("../data/hsymm22.mat", simplify_cells=True)["mesh_dataset"]
     mesh_obj = PyEITMesh(
         node=mat["node"],
         element=mat["element"],

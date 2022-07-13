@@ -4,6 +4,12 @@
 
 Models and Meshes for [pyEIT](https://github.com/liubenyuan/pyEIT)
 
+`eitmesh` provides a easy-to-use interface for loading pre-built meshes into [pyEIT](https://github.com/liubenyuan/pyEIT),
+```python
+import eitmesh
+mesh_obj = eitmesh.load("hsymm")  # a PyEITMesh dataclass
+```
+
 ## 1. Introduction
 
 Build 2D (triangles) and 3D (tetrahedrons) mesh models using third party libraries.
